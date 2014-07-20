@@ -11,8 +11,6 @@ module Mexican
     
     config.to_prepare do
 
-      config.assets.initialize_on_precompile = false
-
       # Load application's model / class decorators
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
         Rails.configuration.cache_classes ? require(c) : load(c)
