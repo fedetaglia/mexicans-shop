@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Mexican::Application.config.secret_key_base = 'e04bb77f05171a6cf1f8e666b0292ed303a69506f768ba09441a15a887ffe44d9fab7c93acf32ce95b7f8a9cd6f8a226ee476e4adb55da2216e398a32ed00c22'
+Mexican::Application.config.secret_key_base = ENV['RAILS_SECRET_KEY']

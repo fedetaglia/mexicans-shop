@@ -9,6 +9,20 @@ Spree.config do |config|
   # Example:
   # Uncomment to override the default site name.
   # config.site_name = "Spree Demo Site"
+  if Rails.env.production?
+
+    Spree.config do |config|
+      config.use_s3 = true
+      config.s3_bucket = ENV['S3_BUCKET_NAME'],
+      config.s3_access_key = ENV['AWS_ACCESS_KEY_ID'],
+      config.s3_secret = ENV['AWS_SECRET_ACCESS_KEY']
+    end
+
+  end
+
 end
 
 Spree.user_class = "Spree::User"
+
+
+
